@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+
+  <meta name="description"
+    content="QuizForge — interactive quizzes, timed exams, results and performance analytics.">
+
+  <title>QuizForge | Quiz & Exam Platform</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Our separate CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar" id="sidebar">
+
+      <a href="#" class="brand" data-page="dashboard">
+        <span class="brand-icon">
+          <i class="fa-solid fa-bolt"></i>
+        </span>
+        <span>Quiz<span class="brand-accent">Forge</span></span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard">
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </button>
+
+        <button class="nav-link" data-page="explore">
+          <i class="fa-solid fa-compass"></i>
+          <span>Explore quizzes</span>
+        </button>
+
+        <button class="nav-link" data-page="exams">
+          <i class="fa-solid fa-stopwatch"></i>
+          <span>Timed exams</span>
+        </button>
+
+        <button class="nav-link" data-page="history">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>My performance</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-label">MANAGEMENT</div>
+
+      <nav class="navigation" aria-label="Management navigation">
+        <button class="nav-link" data-page="admin">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Admin panel</span>
+          <span class="nav-badge">ADMIN</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-promo">
+          <div class="promo-icon">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h3>Keep improving.</h3>
+          <p>Every attempt brings you closer to your goal.</p>
+          <button class="btn btn-primary btn-small"
+            data-page="explore">
+            Start learning
+          </button>
+        </div>
+
+        <div class="sidebar-footer">
+          <span class="status-dot"></span>
+          <span>QuizForge Study Mode</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN APPLICATION ========== -->
+    <main class="main-content">
+
+      <!-- Top navigation -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button mobile-menu"
+            id="menu-toggle" aria-label="Open navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="breadcrumb">
+            <span>Workspace</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <strong id="breadcrumb-current">Dashboard</strong>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="live-indicator">
+            <span class="status-dot"></span>
+            Learning mode
+          </div>
+
+          <button class="icon-button" id="theme-toggle"
+            aria-label="Toggle appearance" title="Toggle appearance">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <div class="profile-avatar" title="Student profile">
+            S
+          </div>
+        </div>
+      </header>
+
+      <!-- All pages are rendered inside this element -->
+      <div class="page-container" id="page-container">
+
+        <!-- Dashboard fallback / initial content -->
+        <section class="welcome-section">
+          <div class="welcome-copy">
+            <div class="eyebrow">
+              <span class="eyebrow-line"></span>
+              YOUR LEARNING SPACE
+            </div>
+
+            <h1>Learn more.<br>
+              <span class="text-gradient">Score higher.</span>
+            </h1>
+
+            <p>
+              Practice smarter with interactive quizzes, timed exams,
+              and detailed performance analysis.
+            </p>
+
+            <div class="welcome-actions">
+              <button class="btn btn-primary" data-page="explore">
+                Explore quizzes
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+
+              <button class="btn btn-secondary" data-page="exams">
+                <i class="fa-solid fa-stopwatch"></i>
+                Take an exam
+              </button>
+            </div>
+          </div>
+
+          <div class="welcome-art" aria-hidden="true">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+
+            <div class="art-card art-card-main">
+              <div class="art-card-top">
+                <span class="art-mini-icon">
+                  <i class="fa-solid fa-bolt"></i>
+                </span>
+                <span class="art-live">READY TO LEARN</span>
+              </div>
+
+              <div class="art-score">100<span>%</span></div>
+              <div class="art-score-caption">Your next best score</div>
+
+              <div class="art-progress">
+                <span></span>
+              </div>
+
+              <div class="art-card-bottom">
+                <span>Consistency</span>
+                <strong>Wins.</strong>
+              </div>
+            </div>
+
+            <div class="floating-chip chip-top">
+              <i class="fa-solid fa-check-circle"></i>
+              Keep practicing
+            </div>
+
+            <div class="floating-chip chip-bottom">
+              <i class="fa-solid fa-fire"></i>
+              Build your streak
+            </div>
+          </div>
+        </section>
+
+        <!-- JavaScript fills the rest of the dashboard -->
+        <section id="dashboard-content"></section>
+
+      </div>
+
+      <!-- Toast notifications -->
+      <div class="toast-container" id="toast-container"
+        aria-live="polite"></div>
+
+      <!-- Dialog / confirmation modal -->
+      <div class="modal-overlay" id="modal-overlay"
+        aria-hidden="true">
+        <div class="modal-box" id="modal-box"
+          role="dialog" aria-modal="true"
+          aria-labelledby="modal-title">
+          <button class="modal-close" id="modal-close"
+            aria-label="Close dialog">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+          <div id="modal-content">
+            <h2 id="modal-title">Confirm action</h2>
+            <p id="modal-message"></p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Our separate JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
